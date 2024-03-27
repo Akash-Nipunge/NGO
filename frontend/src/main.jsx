@@ -18,6 +18,7 @@ import studentResult from './components/studentResult/StudentResult.jsx'
 import NotFound from './components/PageNotFound.jsx'
 
 
+
 function AppRoutes() {
   return (
     <Routes>
@@ -33,10 +34,11 @@ function AppRoutes() {
         <Route path='/user/class/student/search' element={<AppProvider Component={FindStudents}/>}/>
         <Route path='user/result/:studentId' element={<AppProvider Component={ResultSection}/>}/>
         <Route path='user/result/view/:studentId' element={<AppProvider Component={studentResult}/>}/>
+        </Route>
         <Route path="*" element={<NotFound/>} />
         
 
-      </Route>
+     
     </Routes>
   );
 }
@@ -44,7 +46,9 @@ function AppRoutes() {
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
+ 
         <AppRoutes />
+   
     </BrowserRouter>
   </React.StrictMode>
 );
